@@ -200,6 +200,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      *
      * @param i the button id to identify
      * @return an int indicating which button was passed in
+     * @throws AssertionError for invalid button ids
      */
     private int getButtonNum(int i) {
         if (i == R.id.button1) {
@@ -210,8 +211,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             return 3;
         } else if (i == R.id.button4) {
             return 4;
-        } else {
+        } else if (i == R.id.button5) {
             return 5;
+        } else {
+            throw new AssertionError("invalid button id");
         }
     }
 
